@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FiArrowRight } from "react-icons/fi";
-
+import { FiCheckCircle } from "react-icons/fi";
 export default function Home() {
   return (
     <div className="relative flex flex-col justify-center">
@@ -16,42 +16,42 @@ export default function Home() {
             className="absolute left-28 z-10 -top-1"
           />
           <Link href="/" className="decoration-black">
-            <span className="text-slate-950 inline-block m-12 h-fit w-fit size-10 font-medium">
+            <span className="text-slate-950 inline-block m-12 h-fit w-fit text-lg font-medium">
               Home
             </span>
           </Link>
           <Link href="/" className="decoration-black">
-            <span className="text-slate-950 inline-block m-12 h-fit w-fit size-10 font-medium">
+            <span className="text-slate-950 inline-block m-12 h-fit w-fit text-lg font-medium">
               About Us
             </span>
           </Link>
           <Link href="/" className="decoration-black">
-            <span className="text-slate-950 inline-block m-12 h-fit w-fit size-10 font-medium">
+            <span className="text-slate-950 inline-block m-12 h-fit w-fit text-lg font-medium">
               Services
             </span>
           </Link>
           <Link href="/" className="decoration-black">
-            <span className="text-slate-950 inline-block m-12 h-fit w-fit size-10 font-medium">
+            <span className="text-slate-950 inline-block m-12 h-fit w-fit text-lg font-medium">
               Therapist Profile
             </span>
           </Link>
           <Link href="/" className="decoration-black">
-            <span className="text-slate-950 inline-block m-12 h-fit w-fit size-10 font-medium">
+            <span className="text-slate-950 inline-block m-12 h-fit w-fit text-lg font-medium">
               Testimonials
             </span>
           </Link>
           <Link href="/" className="decoration-black">
-            <span className="text-slate-950 inline-block m-12 h-fit w-fit size-10 font-medium">
+            <span className="text-slate-950 inline-block m-12 h-fit w-fit text-lg font-medium">
               Blog
             </span>
           </Link>
           <Link href="/" className="decoration-black">
-            <span className="text-slate-950 inline-block m-12 h-fit w-fit size-10 font-medium">
+            <span className="text-slate-950 inline-block m-12 h-fit w-fit text-lg font-medium">
               Contact
             </span>
           </Link>
           <Link href="/" className="decoration-black">
-            <span className="text-slate-950 inline-block m-12 h-fit w-fit size-10 font-medium">
+            <span className="text-slate-950 inline-block m-12 h-fit w-fit text-lg font-medium">
               Login
             </span>
           </Link>
@@ -122,9 +122,35 @@ export default function Home() {
             </div>
           </div>
         </div>
-
       </div>
-      <div className="w-full h-96 flex flex-col justify-center relative bg-secondary opacity-20"></div>
+      <div className="w-full h-fit flex justify-center relative bg-secondary">
+        <Image
+          src="/img/photo2.png"
+          alt="Foto Tentang kami"
+          width={800}
+          height={600}
+          className="m-3 flex justify-center items-center"
+        />
+        <div className="m-10">
+          <p className="text-highlight">TENTANG KAMI</p>
+          <h1 className="mt-3 font-semibold mb-2 text-xl">BK: Sahabat Siswa dan <br />Sahabat di Setiap Langkah</h1>
+          <p className="text-md">Program BK untuk memberikan dampak kepada permasalah yang terjadi <br />di dalam dan sekolah</p>
+          <div className="flex p-1 justify-start items-center"><p className="mr-1"><FiCheckCircle /> </p><p className="text-md">Layanan Siswa dan Orang Tua</p></div>
+          <div className="flex p-1 justify-start items-center"><p className="mr-1"><FiCheckCircle /></p><p className="text-md"> Kunjungan ke Rumah dan Undangan ke Sekolah</p></div>
+        </div>
+      <div className="w-1/2 h-38 top-80 left-1/3 bg-moklet absolute flex justify-center rounded-lg">
+      <div className="flex flex-col w-1/2  p-4 justify-start">
+        <h1 className="font-semibold text-xl m-5 mb-3 text-white">Misi</h1>
+        <p className="text-white ml-5 text-sm font-light">Memberikan informasi dan edukasi <br />kepada siswa tentang pentingnya <br />menjaga kesehatan mental</p>
+      </div>
+        <div className="h-full transform scale-y-75 border-r-2 border-white"></div>
+      <div className="flex flex-col p-4 w-1/2 justify-start">
+        <h1 className="font-semibold text-xl m-5 mb-3 text-white">Pendekatan</h1>
+        <p className="text-white text-sm font-light ml-5">Undang ahli kesehatan mental atau <br />psikolog untuk menulis artikel. Pastikan <br />artikel tersebut mudah dipahami oleh <br />siswa dan relevan dengan kehidupan <br />sehari-hari mereka</p>
+      </div>
+      </div>
+      </div>
+
     </div>
   );
 }

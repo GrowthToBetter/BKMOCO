@@ -14,13 +14,14 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       height:{
-        '1/15':"8%"
+        '1/15':"8%",
+        "38":"38%",
       },
       colors: {
         'moklet': "#B7292E",
-        "secondary":"#888988",
+        "highlight":"#B7292D",
+        "secondary":"#88898852",
       },
-      
     },
   },
   plugins: [],
