@@ -15,6 +15,7 @@ const config: Config = {
       },
       height:{
         '1/15':"8%",
+        '2/15':"5%",
         "38":"38%",
       },
       colors: {
