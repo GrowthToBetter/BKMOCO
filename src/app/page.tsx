@@ -6,15 +6,15 @@ import { FiArrowRight } from "react-icons/fi";
 import { FiCheckCircle } from "react-icons/fi";
 export default function Home() {
   return (
-    <div className="relative flex flex-col justify-center ">
-      <div className="w-screen h-screen bg-center relative bg-[url('/img/header.png')] bg-no-repeat lg:bg-contain sm:bg-cover">
+    <div className="relative flex flex-col justify-center overflow-hidden ">
+      <div className="w-screen lg:h-screen sm:h-half bg-center relative bg-[url('/img/header.png')] bg-no-repeat lg:bg-contain sm:bg-cover">
         <div className="border-2 z-10 border-l-slate-900 w-full rounded-lg flex absolute justify-end items-center h-1/15 bg-white">
           <Image
             src="/img/iconBK.jpg"
             alt="logo BK"
             width={150}
             height={150}
-            className="absolute sm:w-1/6 sm:full left-28 z-10 -top-1"
+            className="absolute lg:w-40 lg:h-40 sm:w-1/6 sm:h-full md:w-20 md:h-20 lg:left-28 sm:left-14 z-10 -top-1"
           />
           <Link href="/" className="decoration-black">
             <span className="text-slate-950 inline-block 2xl:m-9 m-2 xl:m-8 md:m-2 md:font-semibold md:text-xs lg:m-4 h-fit lx:text-md w-fit 2xl:text-lg lg:font-medium">
@@ -59,8 +59,8 @@ export default function Home() {
         </div>
         <div className="w-full h-full bg-gradient-to-t from-black to-slate-100 mix-blend-multiply absolute bottom-0"></div>
 
-        <div className=" sticky left-20 ml-20 mb-40 lg:top-80 md:top-40 ">
-          <h1 className="text-white text-3xl 2xl:text-5xl sm:text-xl xl:text-4xl font-bold w-fit ">
+        <div className=" absolute left-20 ml-20 mb-40 lg:bottom-0">
+          <h1 className="text-white md:text-2xl 2xl:text-4xl sm:text-xl xl:text-3xl font-bold w-fit ">
             Reclaim Your Happines and Balance: "BK-
             <br />
             Moco.com" 's Online Counseling <br /> for Posistive Learning{" "}
@@ -264,7 +264,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="w-screen h-96 flex justify-start flex-col p-5">
+      <div className="w-screen h-fit flex justify-start flex-col p-5">
         <div className="bg-white w-fit mx-48 h-fit mb-8">
           <p className="text-highlight">Our Team</p>
           <h1 className="text-2xl font-bold mb-2">
@@ -276,32 +276,149 @@ export default function Home() {
             cerita yang terpercaya
           </p>
         </div>
-          <div className="flex w-full h-fit justify-center">
-            <div className="bg-[url('/img/emil.png')] w-64 rounded-lg m-10 h-80 bg-cover bg-no-repeat relative"><div className="bg-gradient-to-t from-black mix-blend-multiply to-white w-full h-2/3 bottom-0 absolute"></div>
+        <div className="flex w-full h-fit justify-center">
+          <div className="bg-[url('/img/emil.png')] w-64 rounded-lg m-10 h-80 bg-cover bg-no-repeat relative">
+            <div className="bg-gradient-to-t from-black mix-blend-multiply to-white w-full h-2/3 bottom-0 absolute"></div>
             <div className="flex justify-start m-3 w-full h-fit absolute flex-col bottom-0">
-              <h1 className="text-white font-bold border-b-2 w-56 border-b-secondary text-xl relative bottom-0">Mr. Emil</h1>
-              <p className="text-white font-light  w-fit text-xs relative bottom-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit</p>
-            </div>
-            </div>
-            <div className="bg-[url('/img/Nia.png')] w-64 rounded-lg m-10 h-80 bg-cover bg-no-repeat relative"><div className="bg-gradient-to-t from-black mix-blend-multiply to-white w-full h-2/3 bottom-0 absolute"></div>
-            <div className="flex justify-start m-3 w-full h-fit absolute flex-col bottom-0">
-              <h1 className="text-white font-bold border-b-2 w-56 border-b-secondary text-xl relative bottom-0">Ms. Nia</h1>
-              <p className="text-white font-light  w-fit text-xs relative bottom-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit</p>
-            </div>
-            </div>
-            <div className="bg-[url('/img/endah.png')] w-64 rounded-lg m-10 h-80 bg-cover bg-no-repeat relative"><div className="bg-gradient-to-t from-black mix-blend-multiply to-white w-full h-2/3 bottom-0 absolute"></div>
-            <div className="flex justify-start m-3 w-full h-fit absolute flex-col bottom-0">
-              <h1 className="text-white font-bold border-b-2 w-56 border-b-secondary text-xl relative bottom-0">Ms. Endah</h1>
-              <p className="text-white font-light  w-fit text-xs relative bottom-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit</p>
-            </div>
-            </div>
-            <div className="bg-[url('/img/Kheren.png')] w-64 rounded-lg m-10 h-80 bg-cover bg-no-repeat relative"><div className="bg-gradient-to-t from-black mix-blend-multiply to-white w-full h-2/3 bottom-0 absolute"></div>
-            <div className="flex justify-start m-3 w-full h-fit absolute flex-col bottom-0">
-              <h1 className="text-white font-bold border-b-2 w-56 border-b-secondary text-xl relative bottom-0">Ms. Kheren</h1>
-              <p className="text-white font-light  w-fit text-xs relative bottom-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit</p>
-            </div>
+              <h1 className="text-white font-bold border-b-2 w-56 border-b-secondary text-xl relative bottom-0">
+                Mr. Emil
+              </h1>
+              <p className="text-white font-light  w-fit text-xs relative bottom-0">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit
+              </p>
             </div>
           </div>
+          <div className="bg-[url('/img/Nia.png')] w-64 rounded-lg m-10 h-80 bg-cover bg-no-repeat relative">
+            <div className="bg-gradient-to-t from-black mix-blend-multiply to-white w-full h-2/3 bottom-0 absolute"></div>
+            <div className="flex justify-start m-3 w-full h-fit absolute flex-col bottom-0">
+              <h1 className="text-white font-bold border-b-2 w-56 border-b-secondary text-xl relative bottom-0">
+                Ms. Nia
+              </h1>
+              <p className="text-white font-light  w-fit text-xs relative bottom-0">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit
+              </p>
+            </div>
+          </div>
+          <div className="bg-[url('/img/endah.png')] w-64 rounded-lg m-10 h-80 bg-cover bg-no-repeat relative">
+            <div className="bg-gradient-to-t from-black mix-blend-multiply to-white w-full h-2/3 bottom-0 absolute"></div>
+            <div className="flex justify-start m-3 w-full h-fit absolute flex-col bottom-0">
+              <h1 className="text-white font-bold border-b-2 w-56 border-b-secondary text-xl relative bottom-0">
+                Ms. Endah
+              </h1>
+              <p className="text-white font-light  w-fit text-xs relative bottom-0">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit
+              </p>
+            </div>
+          </div>
+          <div className="bg-[url('/img/Kheren.png')] w-64 rounded-lg m-10 h-80 bg-cover bg-no-repeat relative">
+            <div className="bg-gradient-to-t from-black mix-blend-multiply to-white w-full h-2/3 bottom-0 absolute"></div>
+            <div className="flex justify-start m-3 w-full h-fit absolute flex-col bottom-0">
+              <h1 className="text-white font-bold border-b-2 w-56 border-b-secondary text-xl relative bottom-0">
+                Ms. Kheren
+              </h1>
+              <p className="text-white font-light  w-fit text-xs relative bottom-0">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="w-full h-full">
+          <button className=" ml-52 w-fit p-2 text-white items-center h-10 flex rounded-lg bg-moklet ">
+            Meet All Counsellor{" "}
+            <span className="text-lg flex items-center">
+              <FiArrowRight />
+            </span>
+          </button>
+        </div>
+
+        <div className="flex w-screen mt-5 h-fit justify-center border-t-2 border-secondary">
+          <div className="m-2 pl-40 p-10 w-2/3">
+            <p className="text-moklet text-md font-medium">
+              Focusing on you, with the best therapeutic care.
+            </p>
+            <h1 className="text-xl font-bold my-3">Kelebihan Kami</h1>
+            <p className="text-sm font-light">
+              Dengan mengusung slogan Terpercaya, Solutif dan Privasi Terjaga
+              demi memberikan solusi terbaik
+            </p>
+            <div className="flex justify-start">
+              <Image
+                src="/img/iconSide.png"
+                alt="side icon"
+                width={64}
+                height={295}
+              />
+              <div>
+                <div className="p-4 border-b-2 border-secondary ">
+                  <h1 className="text-lg font-semibold">Terpercaya</h1>
+                  <p className="text-md font-light mb-2">
+                    Rahasia aman dan berjalan normal
+                  </p>
+                </div>
+                <div className="p-4 border-b-2 border-secondary ">
+                  <h1 className="text-lg font-semibold">Solutif</h1>
+                  <p className="text-md font-light mb-2">
+                    Solusi privasi, Kenyamanan Pasti
+                  </p>
+                </div>
+                <div className="p-4 border-b-2 border-secondary ">
+                  <h1 className="text-lg font-semibold">Privasi Terjaga</h1>
+                  <p className="text-md font-light mb-2">
+                    Privasi Terjaga, Kepercayaan Terjaga
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="w-1/3 m-2 h-half mt-5 bg-[url('/img/1.png')] bg-cover bg-no-repeat rounded-bl-2xl"></div>
+        </div>
+        <button className=" ml-52 w-fit p-2 text-white items-center h-10 flex rounded-lg bg-moklet ">
+          Konfirmasi
+          <span className="text-lg flex items-center">
+            <FiArrowRight />
+          </span>
+        </button>
+      </div>
+      <div className="w-screen h-half flex justify-center bg-secondary ">
+        <div className="w-full h-fit p-10 ml-40">
+          <p className="text-md font-light text-moklet">TESTIMONIALS</p>
+          <h1 className="text-xl font-bold">Apa yang Mereka Katakan...</h1>
+          <p className="text-sm font-light">
+            Testimoni dari siswa terkait curhatan <br />
+            bersama bk
+          </p>
+        </div>
+        <div className="w-full h-fit flex justify-center mr-40">
+          <div className="flex flex-col justify-center m-20">
+            <div className="bg-[url('/img/15.png')] bg-no-repeat bg-cover relative w-64 h-52 p-2">
+              <p className="text-sm font-light w-full h-2/3 absolute bottom-0">
+                Dukungan dari tim BK membuat saya merasa lebih kuat dan mampu
+                menghadapi tantangan di sekolah. Terima kasih atas bantuannya!
+              </p>
+            </div>
+            <div className="flex justify-start mt-10">
+              <div className="w-14 h-14 rounded-full bg-[url('/img/tes1.png')] bg-top bg-no-repeat bg-cover"></div>
+              <div className="flex flex-col">
+                <h1 className="text-lg font-bold">Keefa</h1>
+                <p className="text-md font-light">Siswa RPL 32</p>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col justify-center mr-20">
+            <div className="bg-[url('/img/15.png')] bg-no-repeat bg-cover relative w-64 h-52 p-2">
+              <p className="text-sm font-light w-full h-2/3 absolute bottom-0">
+              Tim BK membantu saya mengatasi masalah akademik dan sosial dengan baik. Saya merasa lebih percaya diri dan didukung.
+              </p>
+            </div>
+            <div className="flex justify-start mt-10">
+              <div className="w-14 h-14 rounded-full bg-[url('/img/tes2.png')] bg-top bg-no-repeat bg-cover"></div>
+              <div className="flex flex-col">
+                <h1 className="text-lg font-bold">Haidar</h1>
+                <p className="text-md font-light">Siswa TKJ 32</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
