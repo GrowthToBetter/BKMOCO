@@ -7,7 +7,7 @@ import Head from "next/head";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "BK Moklet",
+  title: "BK MOCO",
   description: "BK Moklet sahabat siswa",
 };
 
