@@ -18,6 +18,7 @@ const config: Config = {
         '2/15':"5%",
         "38":"38%",
         "half":"50vh",
+        "1.5screen":"150vh",
       },
       colors: {
         'moklet': "#B7292E",
