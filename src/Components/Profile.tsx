@@ -114,7 +114,7 @@ export default function Profile(){
           <div className="w-1/3 m-2 h-half mt-5 bg-[url('/img/1.png')] bg-cover bg-no-repeat rounded-bl-2xl"></div>
         </div>
         <button className=" ml-52 w-fit p-2 text-white items-center h-10 flex rounded-lg bg-moklet ">
-          Konfirmasi
+          Konsultasi
           <span className="text-lg flex items-center">
             <FiArrowRight />
           </span>

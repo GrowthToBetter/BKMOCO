@@ -1,3 +1,6 @@
+'use client';
+
+import { url } from "inspector";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -5,6 +8,9 @@ import { FiArrowRight } from "react-icons/fi";
 import { FiCheckCircle } from "react-icons/fi";
 
 export default function Section(){
+    function nextPage(){
+      open("/Pengaduan","_self")
+    };
     return (<div className="w-full h-fit flex flex-col justify-center relative mb-36">
         <div className="shadow-2xl p-10 border-2 w-2/3 m-auto mt-24 rounded-lg flex justify-between items-center ">
           <div className="w-fit h-fit">
@@ -14,7 +20,7 @@ export default function Section(){
               atau pribadi semua siswa
             </p>
           </div>
-          <button className="rounded-md w-fit flex justify-center p-3 text-center bg-moklet text-white">
+          <button className="rounded-md w-fit flex justify-center p-3 text-center bg-moklet text-white" onClick={()=>{nextPage()}}>
             <p>Diskusikan </p>
             <span className="text-2xl ml-2">
               <FiArrowRight />
