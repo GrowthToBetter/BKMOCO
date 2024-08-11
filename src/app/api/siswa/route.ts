@@ -1,24 +1,79 @@
 // src/app/api/siswa/route.ts
-import db from '@/lib/database';
-import { NextRequest, NextResponse } from 'next/server';
+import prisma from "@/Lib/prisma";
+import { NextRequest, NextResponse } from "next/server";
 
 export async function GET() {
   try {
-    const [results, fields] = await db.query('SELECT * FROM `data_siswa`');
-    return NextResponse.json(results);
+    const results = await prisma.data_Laporan.findMany();
+
+    const serializedResults = results.map((item) => ({
+      ...item,
+      id: item.id.toString(),
+      NoAbsen: item.NoAbsen.toString(),
+      NoTelepon: item.NoTelepon.toString(),
+    }));
+
+    return NextResponse.json(serializedResults);
   } catch (err) {
-    console.error(err);
-    return NextResponse.error();
+    console.error("Error fetching data:", err);
+    return NextResponse.json({ error: "Error fetching data" }, { status: 500 });
   }
 }
 
 export async function POST(request: NextRequest) {
   try {
     const data = await request.json();
-    const [results] = await db.query('INSERT INTO `data_siswa` SET ?', data);
-    return NextResponse.json(results);
+
+    // Cek apakah semua field yang diperlukan ada
+    const requiredFields = [
+      "Nama",
+      "Kelas",
+      "NoAbsen",
+      "Laporan",
+      "BuktiLaporan",
+      "Keterangan",
+      "NoTelepon",
+    ];
+    const missingFields = requiredFields.filter((field) => !data[field]);
+
+    if (missingFields.length > 0) {
+      return NextResponse.json(
+        { error: `Missing required fields: ${missingFields.join(", ")}` },
+        { status: 400 }
+      );
+    }
+
+    const noAbsen = parseInt(data.NoAbsen, 10);
+    const noTelepon = parseInt(data.NoTelepon, 10);
+
+    if (isNaN(noAbsen) || isNaN(noTelepon)) {
+      return NextResponse.json(
+        { error: "NoAbsen and NoTelepon must be numbers" },
+        { status: 400 }
+      );
+    }
+
+    const newEntry = await prisma.data_Laporan.create({
+      data: {
+        Nama: data.Nama,
+        Kelas: data.Kelas,
+        NoAbsen: noAbsen,
+        Laporan: data.Laporan,
+        BuktiLaporan: data.BuktiLaporan,
+        Keterangan: data.Keterangan,
+        NoTelepon: noTelepon,
+      },
+    });
+
+    return NextResponse.json({
+      message: "Data successfully inserted",
+      insertId: newEntry.id,
+    });
   } catch (err) {
-    console.error(err);
-    return NextResponse.error();
+    console.error("Error inserting data:", err);
+    return NextResponse.json(
+      { error: `Error inserting data: ${err}` },
+      { status: 500 }
+    );
   }
 }

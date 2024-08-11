@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@prisma/client": "^5.18.0",
     "cors": "^2.8.5",
     "firebase": "^10.12.5",
     "mysql2": "^3.11.0",
