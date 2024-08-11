@@ -111,7 +111,7 @@ export default function App() {
             <input
               type="text"
               name="Kelas"
-              placeholder="Numberfield Text"
+              placeholder="Textfield Text"
               value={formData.Kelas}
               onChange={handleChange}
               className="text-black border-2 w-1/2 rounded-lg p-3 bg-baseHijau border-inputCodeHijau placeholder-inputCodeHijau"
@@ -120,7 +120,7 @@ export default function App() {
             <input
               type="text"
               name="NoAbsen"
-              placeholder="Textfield Text"
+              placeholder="Numberfield Text"
               value={formData.NoAbsen}
               onChange={handleChange}
               className="text-black border-2 w-1/2 rounded-lg p-3 bg-baseHijau border-inputCodeHijau placeholder-inputCodeHijau"
