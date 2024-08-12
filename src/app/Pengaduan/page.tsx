@@ -57,8 +57,8 @@ export default function App() {
         },
         body: JSON.stringify({
           ...formData,
-          NoAbsen: Number(formData.NoAbsen),
-          NoTelepon: Number(formData.NoTelepon),
+          NoAbsen: formData.NoAbsen,
+          NoTelepon:formData.NoTelepon,
         }),
       });
 
