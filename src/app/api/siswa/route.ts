@@ -57,11 +57,11 @@ export async function POST(request: NextRequest) {
       data: {
         Nama: data.Nama,
         Kelas: data.Kelas,
-        NoAbsen: noAbsen,
+        NoAbsen: data.NoAbsen,
         Laporan: data.Laporan,
         BuktiLaporan: data.BuktiLaporan,
         Keterangan: data.Keterangan,
-        NoTelepon: noTelepon,
+        NoTelepon: data.NoTelepon,
       },
     });
 
