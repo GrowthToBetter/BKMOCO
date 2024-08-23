@@ -9,7 +9,7 @@ import { FiCheckCircle } from "react-icons/fi";
 
 export default function Navbar(){
     return (
-        <div className="border-2 z-10 border-l-slate-900 w-full rounded-lg flex fixed justify-end items-center h-1/15 bg-white">
+        <div className="border-2 z-10 border-l-slate-900 w-full rounded-lg flex fixed justify-end items-center h-fit bg-white">
         <Image
           src="/img/iconBK.jpg"
           alt="logo BK"

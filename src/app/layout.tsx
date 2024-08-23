@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Head from "next/head";
 import Navbar from "./Components/Navbar";
+import Popup from "./Components/popup";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +23,7 @@ export default function RootLayout({
         <link rel="icon" href="favicon.ico" sizes="32" />
       </Head>
       <body className={inter.className}>
-        <Navbar />
+      <Navbar />
         {children}
       </body>
     </html>

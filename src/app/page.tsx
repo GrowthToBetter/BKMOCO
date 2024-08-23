@@ -16,7 +16,7 @@ export default function App() {
       <Section />
       <About />
       <Service />
-      <Profile />
+      <Profile/>
       <Testimoni />
       <News />
       <Credit />

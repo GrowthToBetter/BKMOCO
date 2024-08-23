@@ -16,7 +16,6 @@ model data_Laporan {
   Laporan String
   BuktiLaporan String
   Keterangan String
-  NoTelepon String
 }
 
 

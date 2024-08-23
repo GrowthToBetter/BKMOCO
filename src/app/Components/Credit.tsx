@@ -9,11 +9,11 @@ export default function Credit() {
     <div className="flex flex-col px-40 m-20">
       <div className="flex justify-between m-2 p-2 border-b-2 border-secondary">
         <Image
-          src="/img/iconBk.jpg"
+          src="/img/iconBK.jpg"
           alt="icon bk"
           width={118}
           height={118}
-          className="rounded-3xl flex justify-center"
+          className="rounded-3xl flex justify-center bg-cover"
         />
         <div className=" w-5/6">
           <div className="flex justify-between border-b-2 border-secondary m-2">

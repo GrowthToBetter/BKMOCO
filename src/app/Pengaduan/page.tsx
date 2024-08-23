@@ -1,6 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Popup from "@/app/Components/popup";
+
+
 
 export default function App() {
   const [formData, setFormData] = useState({
@@ -10,9 +13,9 @@ export default function App() {
     Laporan: "",
     BuktiLaporan: "",
     Keterangan: "",
-    NoTelepon: "",
+    
   });
-
+  const [triger, setTriger]=useState(false)
   const [error, setError] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,7 +36,6 @@ export default function App() {
       "Laporan",
       "BuktiLaporan",
       "Keterangan",
-      "NoTelepon",
     ];
 
     const missingFields = requiredFields.filter(
@@ -58,7 +60,6 @@ export default function App() {
         body: JSON.stringify({
           ...formData,
           NoAbsen: formData.NoAbsen,
-          NoTelepon:formData.NoTelepon,
         }),
       });
 
@@ -67,7 +68,7 @@ export default function App() {
       }
 
       const data = await response.json();
-      alert("Laporan " + formData.Nama + " telah terkirim");
+      setTriger(true)
 
       // Reset form data
       setFormData({
@@ -77,7 +78,7 @@ export default function App() {
         Laporan: "",
         BuktiLaporan: "",
         Keterangan: "",
-        NoTelepon: "",
+        
       });
     } catch (error) {
       console.error("Error:", error);
@@ -85,6 +86,10 @@ export default function App() {
     }
   };
   return (
+    <>
+      <Popup triggers={triger}>
+        <h1>hello</h1>
+      </Popup>
     <div className="w-screen h-screen pt-80 flex justify-center items-center overflow-auto">
       <div className="w-3/6 bg-baseHijau h-fit mt-40 mb-20 p-10">
         <div className="flex flex-col mb-20 justify-center">
@@ -154,21 +159,14 @@ export default function App() {
               onChange={handleChange}
               className="text-black border-2 w-1/2 rounded-lg p-3 bg-baseHijau border-inputCodeHijau placeholder-inputCodeHijau"
             />
-            <h1 className="text-xl font-bold text-hijauText m-2">No Telepon</h1>
-            <input
-              type="text"
-              name="NoTelepon"
-              placeholder="contoh : 6281234567980"
-              value={formData.NoTelepon}
-              onChange={handleChange}
-              className="text-black border-2 w-1/2 rounded-lg p-3 bg-baseHijau border-inputCodeHijau placeholder-inputCodeHijau"
-            />
             <button className="mt-5 w-1/2 p-2 text-white items-center justify-center h-10 flex rounded-lg bg-moklet">
               Submit
             </button>
           </form>
         </div>
       </div>
+      
     </div>
+    </>
   );
 }

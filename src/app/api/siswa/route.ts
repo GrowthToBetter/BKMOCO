@@ -10,7 +10,6 @@ export async function GET() {
       ...item,
       id: item.id.toString(),
       NoAbsen: item.NoAbsen.toString(),
-      NoTelepon: item.NoTelepon.toString(),
     }));
 
     return NextResponse.json(serializedResults);
@@ -32,7 +31,6 @@ export async function POST(request: NextRequest) {
       "Laporan",
       "BuktiLaporan",
       "Keterangan",
-      "NoTelepon",
     ];
     const missingFields = requiredFields.filter((field) => !data[field]);
 
@@ -44,11 +42,10 @@ export async function POST(request: NextRequest) {
     }
 
     const noAbsen = parseInt(data.NoAbsen, 10);
-    const noTelepon = parseInt(data.NoTelepon, 10);
 
-    if (isNaN(noAbsen) || isNaN(noTelepon)) {
+    if (isNaN(noAbsen)) {
       return NextResponse.json(
-        { error: "NoAbsen and NoTelepon must be numbers" },
+        { error: "NoAbsen must be numbers" },
         { status: 400 }
       );
     }
@@ -61,7 +58,6 @@ export async function POST(request: NextRequest) {
         Laporan: data.Laporan,
         BuktiLaporan: data.BuktiLaporan,
         Keterangan: data.Keterangan,
-        NoTelepon: noTelepon.toString(),
       },
     });
 
