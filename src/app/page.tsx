@@ -9,6 +9,13 @@ import Profile from "./Components/Profile";
 import Testimoni from "./Components/Testimoni";
 import News from "./Components/News";
 import Credit from "./Components/Credit";
+import type { Metadata } from "next";
+
+
+export const metadata: Metadata = {
+  title: "BK MOCO",
+  description: "BK Moklet sahabat siswa",
+};
 export default function App() {
   return (
     <div className="relative flex flex-col justify-center overflow-hidden ">

@@ -1,13 +1,16 @@
+import { signIn, signOut } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { FiArrowRight } from "react-icons/fi";
 import { FiCheckCircle } from "react-icons/fi";
-
+import { useSession } from "next-auth/react";
 
 
 
 export default function Navbar(){
+
+  const { status}:{status:string}=useSession();
     return (
         <div className="border-2 z-10 border-l-slate-900 w-full rounded-lg flex fixed justify-end items-center h-fit bg-white">
         <Image
@@ -52,11 +55,20 @@ export default function Navbar(){
             Contact
           </span>
         </Link>
-        <Link href="/" className="decoration-black">
+        {status==='authenticated'?(
+          <Link href="/" onClick={()=>{signOut()}} className="decoration-black">
+          <span className="text-slate-950 inline-block 2xl:m-9 xl:m-8 md:m-2 md:font-semibold md:text-xs lg:m-4 h-fit lx:text-md w-fit 2xl:text-lg lg:font-medium">
+            Logout
+          </span>
+        </Link>
+        ):(
+          <Link href="/" onClick={()=>{signIn()}} className="decoration-black">
           <span className="text-slate-950 inline-block 2xl:m-9 xl:m-8 md:m-2 md:font-semibold md:text-xs lg:m-4 h-fit lx:text-md w-fit 2xl:text-lg lg:font-medium">
             Login
           </span>
         </Link>
+        )}
+        
       </div>
 );
 }

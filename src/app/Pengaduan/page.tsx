@@ -1,11 +1,26 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Popup from "@/app/Components/popup";
+import Card from "@/app/Components/utils/card";
+import Link from "next/link";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 
 
 export default function App() {
+  const {data: session, status}:{data:any; status:string}=useSession();
+  const router=useRouter();
+  useEffect(()=>{
+    if(status === "unauthenticated"){
+      router.push('/Login')
+    } else {
+      if(session !== undefined && session?.user.role !=='admin'){
+          router.push('/')
+      }
+    }
+  },[router, session, session?.user.role, status])
   const [formData, setFormData] = useState({
     Nama: "",
     Kelas: "",
@@ -88,7 +103,11 @@ export default function App() {
   return (
     <>
       <Popup triggers={triger}>
-        <h1>hello</h1>
+      <div className="flex w-full h-fit justify-center">
+        <Link href="">
+        <Card bgImage="/img/Nia.png" nama="Ms. Nia"/>
+        </Link>
+      </div>
       </Popup>
     <div className="w-screen h-screen pt-80 flex justify-center items-center overflow-auto">
       <div className="w-3/6 bg-baseHijau h-fit mt-40 mb-20 p-10">
