@@ -19,10 +19,6 @@ export default function Login() {
 
       if (!res?.error) {
         push("/");
-      } else {
-        e.target.email.value = "";
-        e.target.Password.value = "";
-        alert("User not Registered")
       }
     } catch (err) {
       console.log(err);

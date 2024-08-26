@@ -4,20 +4,22 @@ import { useEffect, useState } from "react";
 import Popup from "@/app/Components/popup";
 import Card from "@/app/Components/utils/card";
 import Link from "next/link";
-import { useSession } from "next-auth/react";
+import { useSession, getSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 
 
 export default function App() {
-  const {data: session, status}:{data:any; status:string}=useSession();
+  const {data: session, status}:{data:any; status:string}=useSession();  
   const router=useRouter();
   useEffect(()=>{
     if(status === "unauthenticated"){
       router.push('/Login')
     } else {
-      if(session !== undefined && session?.user.role !=='admin'){
-          router.push('/')
+      if(session !== undefined && session.user.role !=='admin'){
+          router.push('/Pengaduan')
+      } else {
+        router.push('/')
       }
     }
   },[router, session, session?.user.role, status])

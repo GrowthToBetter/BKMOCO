@@ -37,8 +37,8 @@ export async function POST(request: NextRequest) {
 
     const newEntry = await prisma.akun_user.create({
       data: {
-        Gmail:data.email,
-        Password:data.password,
+        Gmail:data.Gmail,
+        Password:data.Password,
       },
     });
 

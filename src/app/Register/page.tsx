@@ -5,8 +5,8 @@ import Link from "next/link";
 export default function Register() {
   
   const [formData, setFormData] = useState({
-    email: "",
-    password: "",
+    Gmail: "",
+    Password: "",
   });
   const [error, setError] = useState<string | null>(null);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -18,10 +18,10 @@ export default function Register() {
 
   const handleRegister = async (e: any) => {
     e.preventDefault();
-    if(e.target.password.value === e.target.Password2.value){
+    if(e.target.Password.value === e.target.Password2.value){
       const requiredFields = [
-        "email",
-        "password",
+        "Gmail",
+        "Password",
       ];
   
       const missingFields = requiredFields.filter(
@@ -55,10 +55,12 @@ export default function Register() {
         const data = await response.json();
         // Reset form data
         setFormData({
-          email:"",
-          password:""
+          Gmail:"",
+          Password:""
           
         });
+        e.target.Password.value=" ";
+        e.target.Gmail.value=" ";
       } catch (error) {
         console.error("Error:", error);
         alert("Error adding Account.");
@@ -82,7 +84,7 @@ export default function Register() {
               Email
               <input
                 type="text"
-                name="email"
+                name="Gmail"
                 onChange={handleChange}
                 placeholder="123@gmail.com"
                 className="text-black border-2 w-full font-medium text-sm rounded-lg p-3 border-moklet placeholder-slate-400"
@@ -92,7 +94,7 @@ export default function Register() {
               Password
               <input
                 type="password"
-                name="password"
+                name="Password"
                 onChange={handleChange}
                 placeholder="password"
                 className="text-black text-sm font-medium border-2 w-full rounded-lg p-3 border-moklet placeholder-slate-400"
@@ -124,3 +126,5 @@ export default function Register() {
     </>
   );
 };
+
+

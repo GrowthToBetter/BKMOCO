@@ -24,6 +24,11 @@ model akun_user{
   Password String
 }
 
+model admin{
+  id Int @id @default(autoincrement())
+  Gmail String
+}
+
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")

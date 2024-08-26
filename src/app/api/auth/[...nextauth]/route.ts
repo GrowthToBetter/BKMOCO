@@ -22,16 +22,19 @@ const authOption: NextAuthOptions = {
           email: string;
           password: string;
         };
-        const user: any = {
-          id: 1,
-          name: "bara",
-          email: "baratrahjaga@gmail.com",
-          role: "admin",
-        };
         try {
-          const results = await prisma.akun_user.findMany();
-          for(const {Gmail, Password} of results){
+        const results = await prisma.akun_user.findMany();
+        const admins = await prisma.admin.findMany();
+        const adminEmails=admins.map((admin)=>{return admin.Gmail});
+        for(const {Gmail, Password} of results){
+          const user: any = {
+            id: 1,
+            name: Gmail.split("@")[0],
+            email: Gmail,
+            role: adminEmails.includes(Gmail) ? "admin":"user",
+          };
             if(email === Gmail && password===Password){
+              console.log(`user 1 ${user}`)
               return user;
             } 
           }
@@ -47,11 +50,11 @@ const authOption: NextAuthOptions = {
     }),
   ],
   callbacks: {
-    async jwt({ token, account, profile, user }: any) {
-      if (account?.providers === "credentials") {
-        token.email = user.Gmail;
+    async jwt({ token, user }: any) {
+      if (user) {
+        token.email = user.email;
         token.fullname = user.fullname;
-        token.role = user.role;
+        (user.role===undefined)? null:token.role=user.role
       }
       return token;
     },
